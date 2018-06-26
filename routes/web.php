@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('/insert', 'storeData@store');
+Route::get('/insertGenre', 'storeGenreData@store');

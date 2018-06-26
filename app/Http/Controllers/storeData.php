@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Movie;
+use App\Movie_genre;
 
 class storeData extends Controller
 {
@@ -16,9 +17,17 @@ class storeData extends Controller
     	if (!empty($array)) {
     		foreach ($array['results'] as $key => $value) {
 	    		$movie = new Movie;
+	    		$movie->id = $value['id']; 		 
 	    		$movie->title = $value['title'];
 	    		$movie->year = $value['release_date'];
 	    		$movie->genre = 1;
+
+	    		foreach ($value['genre_ids'] as $val) {
+	    			$relation = new Movie_genre;
+	    			$relation->movie_id = $value['id'];
+	    			$relation->genre_id = $val;
+	    			$relation->save();
+	    		}
 	    		$movie->save();
     		}
     	}
