@@ -3,7 +3,7 @@
 
 <div class="container text-center mb-3">
     <h2>Movie<br>2<br>Watch</h2>
-    <h4>Just press on the image!</h4>
+    <h4>Just press on the image and you`l get the <br> Movie!</h4>
 </div>
 
 <div class="container mt-3">
@@ -20,7 +20,7 @@
 				<div class="carousel-inner">
 					<div class="carousel-item active">
 						<a href="show?genreId=action">
-						<img class="d-block w-100 rounded" src="https://m.media-amazon.com/images/M/MV5BOGZiZTU1ZGUtMDFiNy00YTY0LWI1MzItYTU3NDI5ZTVjMjY5XkEyXkFqcGdeQXVyMjUyNDk2ODc@._V1_.jpg" alt="First slide" style="height: 750px">
+						<img class="d-block w-100 rounded" src="https://m.media-amazon.com/images/M/MV5BNmVmMjlmM2QtOTBkZi00MTY4LWIyMGEtZjFhZDg4NzNmYzkzXkEyXkFqcGdeQXVyNzc5NjM0NA@@._V1_.jpg" alt="First slide" style="height: 750px">
 						</a>
 					<div class="carousel-caption d-none d-md-block">
 					    <h3>Action</h3>
@@ -73,7 +73,7 @@
 </div>
 
 <div class="container mt-5 mb-5">
-<h4 style="text-align: center">Recently added</h4>
+<h4 style="text-align: center">Other movies</h4>
 	<div class="row mt-5">
 		@foreach ($random as $val)
 			<div class="col">
@@ -83,6 +83,9 @@
 				</a>
 			</div>
 		@endforeach
+	</div>
+	<div class="row justify-content-center mb-4 mt-3">
+		{!! $random->links() !!}
 	</div>
 </div>
 

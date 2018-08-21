@@ -17,4 +17,6 @@ Route::get('/', 'mainController@index');
 Route::get('/show', 'mainController@show');
 Route::get('info/{id}', 'mainController@showMovieInfo');
 Route::get('/home', 'HomeController@index');
+Route::get('/search', 'mainController@search')->name('search');
+Route::get('/portfolio', 'mainController@portfolio');
 Auth::routes();

@@ -21,7 +21,7 @@
 		</div>
 	</div>
 
-<div class="container">
+<div class="container mb-5">
 	<div class="row align-items-center">
 		@foreach($movie as $key)
 			@if($loop->first)
@@ -37,7 +37,7 @@
 							<p><em>{{$key['overview']}}</em></p>
 						</div>
 					</div>
-					<h4 class="mt-5">Other movies you may like</h4>
+					<h4 class="mt-5">Other {{$_GET['genreId']}} movies you may like</h4>
 				</div>
 			@endif
 				<div class="col-2 mt-5 mb-5">
