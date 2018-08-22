@@ -18,23 +18,32 @@
 					<li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
 				</ol>
 				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<a href="show?genreId=action">
-						<img class="d-block w-100 rounded" src="https://m.media-amazon.com/images/M/MV5BNmVmMjlmM2QtOTBkZi00MTY4LWIyMGEtZjFhZDg4NzNmYzkzXkEyXkFqcGdeQXVyNzc5NjM0NA@@._V1_.jpg" alt="First slide" style="height: 750px">
-						</a>
-					<div class="carousel-caption d-none d-md-block">
-					    <h3>Action</h3>
-					</div>
-					</div>
-					<div class="carousel-item">
-						<a href="show?genreId=comedy">
-						<img class="d-block w-100 rounded" src="https://m.media-amazon.com/images/M/MV5BN2YxMGNmMWQtNWRmMC00OWI1LThiMDgtMWJhY2ZmOGJjZjk2L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTc3MjUzNTI@._V1_.jpg" alt="Second slide" style="height: 750px">
-						</a>
-					<div class="carousel-caption d-none d-md-block">
-					    <h3>Comedy</h3>
-					</div>
-					</div>
-					<div class="carousel-item">
+					@foreach ($genre as $val)
+						@if ($val['img'] != 'empty')
+							@if ($loop->first)
+								<div class="carousel-item active">
+									<a href="show/{{$val['id']}}">
+									<img class="d-block w-100 rounded" src="{{$val['img']}}" alt="First slide" style="height: 750px">
+									</a>
+									<div class="carousel-caption d-none d-md-block">
+									    <h3>{{$val['name']}}</h3>
+									</div>
+								</div>
+							@else
+								<div class="carousel-item">
+									<a href="show/{{$val['id']}}">
+									<img class="d-block w-100 rounded" src="{{$val['img']}}" alt="Second slide" style="height: 750px">
+									</a>
+									<div class="carousel-caption d-none d-md-block">
+								    	<h3>{{$val['name']}}</h3>
+									</div>
+								</div>
+							@endif
+						@endif	
+					@endforeach
+				</div>
+
+					{{-- <div class="carousel-item">
 						<a href="show?genreId=horror">
 						<img class="d-block w-100 rounded" src="https://m.media-amazon.com/images/M/MV5BMDRlMzQ3OGItZmIzNS00OTg1LThlN2ItMjQ0ZDYzZjQzYTkwXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_.jpg" alt="Third slide" style="height: 750px">
 						</a>
@@ -57,8 +66,8 @@
 					<div class="carousel-caption d-none d-md-block">
 					    <h3>Drama</h3>
 					</div>
-					</div>
-				</div>
+					</div> --}}
+				
 					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 						<span class="sr-only">Previous</span>

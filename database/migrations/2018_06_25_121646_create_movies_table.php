@@ -18,9 +18,9 @@ class CreateMoviesTable extends Migration
             $table->string('title');
             $table->date('year');
             $table->string('img');
-            $table->decimal('rating', 2, 1);
+            $table->decimal('rating', 2, 1)->default(5.0);
             $table->decimal('popularity', 7, 3);
-            $table->string('overview');
+            $table->longText('overview');
             $table->timestamps();
         });
     }

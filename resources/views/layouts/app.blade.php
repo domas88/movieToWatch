@@ -86,7 +86,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="portfolio">Created by Domantas Šablinskas</a>
+                        <a class="nav-link" href="portfolio"><strong>Contact me</strong></a>
                     </li>
                 </ul>
             </div>

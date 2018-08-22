@@ -1,25 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="container mt-3">
-		<div class="row">
-			<div class="col">
-				<a href="../show?genreId=action"><h5>Action</h5></a>
-			</div>
-			<div class="col">
-				<a href="../show?genreId=comedy"><h5>Comedy</h5></a>
-			</div>
-			<div class="col">
-				<a href="../show?genreId=horror"><h5>Horor</h5></a>
-			</div>
-			<div class="col">
-				<a href="../show?genreId=sciense"><h5>Scy-Fy</h5></a>
-			</div>
-			<div class="col">
-				<a href="../show?genreId=drama"><h5>Drama</h5></a>
-			</div>
-		</div>
+
+<div class="container mt-3">
+	<div class="row">
+		@foreach ($genre as $val)
+			@if ($val['img'] != 'empty')
+				<div class="col">
+					<a class="btn btn-info btn-xs btn-block" href="../show/{{$val['id']}}" role="button"><h5>{{$val['name']}}</h5></a>
+				</div>
+			@endif
+		@endforeach
 	</div>
+</div>
 
 <div class="container">
 	<div class="row align-items-center">

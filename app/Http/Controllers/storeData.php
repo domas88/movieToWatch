@@ -22,7 +22,9 @@ class storeData extends Controller
 		    		$movie->id = $value['id']; 		 
 		    		$movie->title = $value['title'];
 		    		$movie->img = $value['poster_path'];
-		    		$movie->rating = $value['vote_average'];
+		    		if ($value['vote_average'] != 10 && $value['vote_average'] != 0) {
+		    			$movie->rating = $value['vote_average'];
+		    		}
 		    		$movie->popularity = $value['popularity'];
 		    		$movie->overview = $value['overview'];
 		    		if ($value['release_date'] != "") {
@@ -40,8 +42,7 @@ class storeData extends Controller
 		    		$movie->save();
 	    		}
 	    	}
-	    		sleep(0.2);
     	}
-    		return redirect('/index');
+    		return redirect('/');
     }
 }

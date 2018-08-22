@@ -13,49 +13,32 @@ class mainController extends Controller
     public function index() {
 
 		$movie = movie::paginate(10);
-		// $random = $movie->random(10);
-		// $pagination = $movie->paginate(10);
+		$genre = genre::all();
 
-    	return view('index')->with('random', $movie);
+    	return view('index')->with('random', $movie)->with('genre', $genre);
     }
 
-    public function show() {
-    	if (isset($_GET['genreId'])) { 
-	    	
-	    	$genreId = $_GET['genreId'];
+    public function show($genreId) {
 
-	    	if ($genreId == 'action') {
-	    		$movie = genre::find(28)->movie;
-	    		$randomMovie = $movie->random(6);
-	    	} elseif ($genreId == 'comedy') {
-	    		$movie = genre::find(35)->movie;
-	    		$randomMovie = $movie->random(6);
-	    	} elseif ($genreId == 'drama') {
-	    		$movie = genre::find(18)->movie;
-	    		$randomMovie = $movie->random(6);
-	    	} elseif ($genreId == 'horror') {
-	    		$movie = genre::find(27)->movie;
-	    		$randomMovie = $movie->random(6);
-	    	} elseif ($genreId == 'sciense') {
-	    		$movie = genre::find(878)->movie;
-	    		$randomMovie = $movie->random(6);
-	    	} else {
-	    		echo "No movies found";
-	    	} 
-	    	return view('show')->with('movie', $randomMovie);
-	    }  
-    }
+		$genre = genre::all();
+
+    	$movie = genre::find($genreId)->movie;
+    	$randomMovie = $movie->random(13);
+
+    	return view('show')->with('movie', $randomMovie)->with('genre', $genre);
+    	}
 
     public function showMovieInfo($id) {
 
     	$genre = movie::find($id)->genre->first();
     	$genreVal = $genre->only('id');
-    	$movie = movie::where('id', $id)->get();
-
     	$sugestion = genre::find($genreVal['id'])->movie;
     	$sugestionResult = $sugestion->random(12);
 
-    	return view('movieInfo')->with('movie', $movie)->with('sugestion', $sugestionResult);
+    	$movie = movie::where('id', $id)->get();
+    	$genreAll = genre::all();
+
+    	return view('movieInfo')->with('movie', $movie)->with('sugestion', $sugestionResult)->with('genre', $genreAll);
 
     }
 
