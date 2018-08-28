@@ -11,7 +11,7 @@ class storeData extends Controller
     public function store()
     {
 
-        for ($i = 2; $i < 20; $i++) {
+        for ($i = 2; $i < 39; $i++) {
             $url = 'https://api.themoviedb.org/3/discover/movie?api_key=30fbb65e82996ce2086bdf884d7a690e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=' . $i;
             $json = file_get_contents($url);
             $array = json_decode($json, true);
