@@ -7,7 +7,7 @@ use App\Genre;
 use App\Movie;
 use App\MovieGenre;
 
-class MainController extends Controller
+class mainController extends Controller
 {
     public function index()
     {

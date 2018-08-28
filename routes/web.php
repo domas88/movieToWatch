@@ -16,7 +16,7 @@ Route::get('/insertGenre', 'storeGenreData@store');
 Route::get('/', 'mainController@index');
 Route::get('/show/{genreId}', 'mainController@show')->name('show');
 Route::get('info/{id}', 'mainController@showMovieInfo')->name('info');
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'homeController@index');
 Route::get('/search', 'mainController@search')->name('search');
 Route::get('/portfolio', 'mainController@portfolio');
 Auth::routes();
