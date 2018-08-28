@@ -32,7 +32,7 @@
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <ul class="navbar-nav">
             <li class="nav-brand">
-                <a class="nav-link" href="/movieToWatch/public/">Movie 2 Watch</a>
+                <a class="nav-link" href="{{route('index')}}">Movie 2 Watch</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="Movies"></a>
