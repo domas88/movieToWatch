@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace Movie2Watch\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Movie2Watch\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Genre;
+use Movie2Watch\Genre;
 
 class storeGenreData extends Controller
 {

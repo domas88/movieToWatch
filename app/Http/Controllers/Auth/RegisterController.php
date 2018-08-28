@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Movie2Watch\Http\Controllers\Auth;
 
-use App\User;
-use App\Http\Controllers\Controller;
+use Movie2Watch\User;
+use Movie2Watch\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -59,7 +59,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \Movie2Watch\User
      */
     protected function create(array $data)
     {

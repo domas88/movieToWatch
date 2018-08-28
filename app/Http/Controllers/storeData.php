@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Movie2Watch\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Movie;
-use App\MovieGenre;
+use Movie2Watch\Movie;
+use Movie2Watch\MovieGenre;
 
 class storeData extends Controller
 {

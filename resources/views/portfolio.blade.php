@@ -4,7 +4,7 @@
     <div class="container mt-5">
         <div class="row align-items-center">
             <div class="col-4">
-                <img src="img/ratt.jpg" class="img-responsive rounded" alt="image" width="100%" height="auto">
+                <img src="http://i63.tinypic.com/nppci0.jpg" class="img-responsive rounded" alt="image" width="100%" height="auto">
             </div>
             <div class="col-8">
                 <p> Hi, my name is Domantas Šablinskas and i`m looking for a job opportunityes as PHP developer. <br> My
